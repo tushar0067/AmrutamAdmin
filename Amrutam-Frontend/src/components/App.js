@@ -10,7 +10,7 @@ import { LoginPage } from './LoginPage';
 
 // The API base URL
 
-const API_URL = 'http://localhost:5000/api/ingredients';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/ingredients';
 
 function App() {
   // Initialize auth state by checking localStorage for a token
