@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://amrutam-frontend-black.vercel.app/",
+      "https://amrutam-frontend-2tnewxcss-tushar2226csit1003-kietedus-projects.vercel.app",
       "http://localhost:3000",
     ], // Replace with your actual frontend URL
     credentials: true,
@@ -18,6 +18,7 @@ app.use(
   })
 );
 
+app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
