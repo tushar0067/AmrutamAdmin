@@ -29,3 +29,4 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
   .catch((error) => {
     console.error('Database connection error:', error);
   });
+module.exports=app
