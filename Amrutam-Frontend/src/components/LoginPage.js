@@ -7,18 +7,19 @@ const loginBg = new URL("../Assets/loginImage.jpg", import.meta.url).href;
 // Using a placeholder for compatibility
 // const loginBg = 'https://i.imgur.com/3df90f.png';
 
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 export const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
      setError(''); // Clear previous errors
 
     try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
