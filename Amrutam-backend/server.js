@@ -6,8 +6,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors({ origin: ["https://amrutam-frontend-black.vercel.app","http://localhost:1234"], credentials: true }));
+app.use(cors());
 
+// Or more explicitly:
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
