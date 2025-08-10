@@ -55,7 +55,7 @@ function App() {
       console.log(`${pair[0]}:`, pair[1]);
     }
 
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_URL}/ingredients`, {
       method: 'POST',
       body: formData,
     });
@@ -91,7 +91,7 @@ function App() {
     const ingredientData = JSON.parse(formData.get('ingredientData'));
     const ingredientId = ingredientData._id;
     try {
-      const response = await fetch(`${API_URL}/${ingredientId}`, {
+      const response = await fetch(`${API_URL}/ingredients/${ingredientId}`, {
         method: 'PUT',
         body: formData,
       });
@@ -113,7 +113,7 @@ function App() {
         return;
     }
     try {
-        const response = await fetch(`${API_URL}/${ingredientId}/status`, {
+        const response = await fetch(`${API_URL}/ingredients/${ingredientId}/status`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: newStatus }),
